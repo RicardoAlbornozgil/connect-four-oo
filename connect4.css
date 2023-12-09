@@ -1,0 +1,90 @@
+* {
+  font-size: 18px;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  background: darkslategrey;
+}
+
+h1 {
+  font-size: 4rem;
+  background: linear-gradient(45deg, #ff8c00, #ff0080);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+#options {
+  display: inline;
+}
+
+/* game board table */
+#board td {
+  width: 50px;
+  height: 50px;
+  border: solid 1px #666;
+}
+
+/* pieces are div within game table cells: draw as colored circles */
+
+.piece {
+  margin: 5px;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+}
+
+.piece.p1 {
+  background-color: var(--player1-color, red);
+}
+
+.piece.p2 {
+  background-color: var(--player2-color, blue);
+}
+
+/* column-top is table row of clickable areas for each column */
+
+#column-top td {
+  border: dashed 1px lightgray;
+}
+
+#column-top td:hover {
+  background-color: gold;
+}
+
+
+
+/* Add these styles for the buttons */
+
+button {
+  font-size: 16px;
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button#startButton {
+  background-color: #4CAF50; /* Green color */
+  color: white;
+}
+
+button#startButton:hover {
+  background-color: #45a049; /* Darker green color on hover */
+}
+
+button#exitButton {
+  background-color: #f44336; /* Red color */
+  color: white;
+}
+
+button#exitButton:hover {
+  background-color: #d32f2f; /* Darker red color on hover */
+}
