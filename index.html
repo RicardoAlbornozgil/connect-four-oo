@@ -1,31 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Connect 4</title>
-  <link href="connect4.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect 4</title>
+    <link href="connect4.css" rel="stylesheet">
 </head>
 <body>
-<h1>Connect-four</h1>
-<div id="game">
-  <table id="board"></table>
-  <div id="options"> 
-    <button id="startButton">Start Game</button>
-    <button id="exitButton">Exit Game</button>
-  </div>
-  
-  <form id="colorForm">
-    <label for="player1Color">Player 1 Color:</label>
-    <input type="color" id="player1Color" value="#ff0000">
-    <label for="player2Color">Player 2 Color:</label>
-    <input type="color" id="player2Color" value="#0000ff">
-  </form>
-  
-</div>
+    
+    <h1>Connect-four</h1>
+    
+    <div id="game">
+      
+        <table id="board"></table>
+      
+        <div id="options"> 
+            <button id="startButton" type="button">Start Game</button>
+            
+        </div>
+        
+        <form id="colorForm">
+            
+            <label for="player1Color">Player 1 Color:</label>
+            <select id="player1Color">
+                <option value="#FF0000">Red</option>
+                <option value="#00FF00">Green</option>
+                <option value="#0000FF">Blue</option>
+            </select>
+        
+            <label for="player2Color">Player 2 Color:</label>
+            <select id="player2Color">
+                <option value="#00FFFF">Cyan</option>
+                <option value="#FF00FF">Magenta</option>
+                <option value="#FFFF00">Yellow</option>
+            </select>
+        
+        </form>
+      
+    </div>
 
-<script src="connect4.js"></script>
+    <script src="connect4.js"></script>
 
 </body>
 </html>

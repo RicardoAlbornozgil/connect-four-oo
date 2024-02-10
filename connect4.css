@@ -1,90 +1,142 @@
+/* Set base font size for all elements */
 * {
   font-size: 18px;
 }
 
+/* Style for the body element */
 body {
+  /* Center the content vertically and horizontally */
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  /* Set body height to full viewport height */
   height: 100vh;
-  margin: 0;
+  margin: 0; /* Remove default margin */
+  /* Set background color */
   background: darkslategrey;
 }
 
+/* Style for heading level 1 */
 h1 {
+  /* Hide text and apply gradient effect */
   font-size: 4rem;
+  color: transparent;
   background: linear-gradient(45deg, #ff8c00, #ff0080);
   -webkit-background-clip: text;
-  color: transparent;
+  -moz-background-clip: text;
+  background-clip: text;
 }
 
-#options {
-  display: inline;
+/* Style for the exit button */
+#exitButton {
+  display: none; /* Hide exit button initially */
 }
 
-/* game board table */
+/* Style for the color form */
+#colorForm {
+  display: block; /* Make color form visible initially */
+}
+
+/* Hide color form when the game has started */
+.game-started #colorForm {
+  display: none;
+}
+
+/* Change background color when hovering over options */
+#player1Color option:hover,
+#player2Color option:hover {
+  background-color: var(--player-color);
+}
+
+/* Style for the game board table */
 #board td {
+  /* Set width, height, and border */
   width: 50px;
   height: 50px;
   border: solid 1px #666;
 }
 
-/* pieces are div within game table cells: draw as colored circles */
+/* Change background color of player 1 option on hover */
+#player1Color option:hover {
+  background-color: var(--player1-color);
+}
 
+/* Change background color of player 2 option on hover */
+#player2Color option:hover {
+  background-color: var(--player2-color);
+}
+
+/* Style for the game pieces */
 .piece {
   margin: 5px;
   width: 80%;
   height: 80%;
-  border-radius: 50%;
+  border-radius: 50%; 
 }
 
-.piece.p1 {
-  background-color: var(--player1-color, red);
+/* Define CSS variables */
+:root {
+  --player-color: #FFFFFF; /* Default color for players */
+  --player1-color: #FF0000; /* Default color for player 1 */
+  --player2-color: #00FFFF; /* Default color for player 2 */
 }
 
-.piece.p2 {
-  background-color: var(--player2-color, blue);
+/* Set player 1 color using selected color */
+#player1Color {
+  --player1-color: var(--selected-color);
 }
 
-/* column-top is table row of clickable areas for each column */
+/* Set player 2 color using selected color */
+#player2Color {
+  --player2-color: var(--selected-color);
+}
 
+/* Style for the clickable areas for each column */
 #column-top td {
   border: dashed 1px lightgray;
 }
 
+/* Change background color when hovering over column */
 #column-top td:hover {
   background-color: gold;
 }
 
+#board td.cell {
+  border: yellow solid 5px;
+}
 
-
-/* Add these styles for the buttons */
-
+/* Style for buttons */
 button {
+  /* Set font size, padding, margin, border, and border radius */
   font-size: 16px;
   padding: 10px 20px;
   margin: 10px;
   border: none;
   border-radius: 5px;
+  /* Set cursor to pointer and transition effect */
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
+/* Style for the start button */
 button#startButton {
   background-color: #4CAF50; /* Green color */
   color: white;
 }
 
+/* Change background color of start button on hover */
 button#startButton:hover {
   background-color: #45a049; /* Darker green color on hover */
 }
 
+/* Style for the exit button */
 button#exitButton {
   background-color: #f44336; /* Red color */
   color: white;
 }
 
+/* Change background color of exit button on hover */
 button#exitButton:hover {
   background-color: #d32f2f; /* Darker red color on hover */
 }
